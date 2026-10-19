@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+*.app/
+*.xcarchive/
+*.ipa
+scan-report*.json

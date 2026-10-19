@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "example_only": true,
+  "profiles": {
+    "app-store": {
+      "forbidden_markers": ["EXAMPLE_purchase_override", "EXAMPLE_health_write_simulator"],
+      "required_markers": [],
+      "forbidden_paths": ["*/EXAMPLE_simulation_templates.json.gz"],
+      "required_paths": []
+    },
+    "internal": {
+      "forbidden_markers": [],
+      "required_markers": [{"value": "EXAMPLE_purchase_override", "path": "*"}],
+      "forbidden_paths": [],
+      "required_paths": ["*/EXAMPLE_simulation_templates.json.gz"]
+    }
+  }
+}

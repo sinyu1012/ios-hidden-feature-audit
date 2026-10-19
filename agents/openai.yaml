@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple App Review 2.5.19 Audit"
+  short_description: "Audit hidden features and iOS distribution boundaries"
+  default_prompt: "Use $ios-hidden-feature-audit to audit this project for Apple App Review Guideline 2.5.19 risks and report evidence, distribution boundaries, and prioritized recommendations before changes."
