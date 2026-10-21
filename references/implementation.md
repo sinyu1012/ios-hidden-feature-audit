@@ -20,6 +20,10 @@ Use separate internal Release and production-candidate configurations where appr
 - For React Native, inspect JS/Hermes bundles, native modules, and resources. Verify dead-code elimination in the actual Release artifact. Check dynamic-update policy independently.
 - Preserve Android's existing defaults and access rules. Do not accidentally reuse iOS distribution parameters for Android Release.
 
+## Purchase testing and remote feature disclosure
+
+Use [submission checks](submission-checks.md) when replacing purchase mocks, validating real purchase retention, integrating archive checks into CI, or preparing remote-feature review access. Local StoreKit configuration and sandbox testing exercise different environments; neither justifies shipping an entitlement bypass.
+
 ## Limited tools and runtime access
 
 - Guard UI entrypoints, direct routes/deep links, and sensitive operations. Track compiled inclusion, access permission, and settings consumption separately.

@@ -1,6 +1,6 @@
 # Policy and evidence
 
-Policy snapshot checked: 2026-10-19. Recheck the current official text when making policy conclusions; this date is not a permanent guarantee.
+Policy snapshot checked: 2026-10-21. Recheck the current official text when making policy conclusions; this date is not a permanent guarantee.
 
 Source: [Apple App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/#software-requirements).
 

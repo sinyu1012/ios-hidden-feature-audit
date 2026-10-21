@@ -19,6 +19,12 @@ Copy `assets/audit-policy.example.json`, replace EXAMPLE markers and resource pa
 - Exit **0** means inventory completed or policy passed: inspect `mode` and `status`. Exit **1** means a policy violation or missing required marker/path. Exit **2** means invalid configuration/input, unreadable or malformed content, size-limit failure, or no Mach-O found. Never treat an error as a clean scan.
 - Files and decompressed payloads have a default 256 MiB limit. Use `--max-mib` explicitly to raise it; decoding and matching can require extra memory.
 
+## Production retention and CI
+
+The example includes a required production marker in both distribution profiles and a test marker required only in the internal profile. Replace every `EXAMPLE` value and path with evidence from the actual project; do not assume class names survive optimization. Scope positive markers to the implementation-bearing file so a copy in a text resource cannot satisfy the rule.
+
+For the release gate, test-target resources, and functional purchase checks that complement marker evidence, see [submission checks](submission-checks.md). Inventory mode and this repository's unit-test CI are not an app release gate.
+
 ## Limitations
 
 - No signature, encryption, control-flow, runtime-reachability, or per-architecture validation. A marker in one architecture does not prove every architecture is correct.

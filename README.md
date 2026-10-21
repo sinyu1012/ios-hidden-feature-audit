@@ -15,7 +15,8 @@ It helps you separate production features from internal testing, preserve legiti
 - Debug, internal Release, production candidate, TestFlight, App Store, and Android behavior matrices.
 - Limited tool access, direct-route protection, startup latency, transient errors, historical settings, and upgrade compatibility.
 - Semantic naming and versioned configuration migration without disguising behavior or breaking older clients.
-- Project-specific artifact policies, testing handoffs, AGENTS.md rules, and truthful App Review notes.
+- StoreKit-based purchase testing, positive checks for real purchase code, and archive gates before upload.
+- Remote-feature inventories, reviewer access, rollout plans, and project-specific artifact policies.
 
 **TestFlight is an installation channel, not a build configuration.** A candidate installed through TestFlight contains the same compiled capabilities as that candidate when submitted to the store. Receipt-based restrictions do not remove code.
 
@@ -78,6 +79,7 @@ No binaries or reports are uploaded by the scanner. Output omits raw matching co
 | [SKILL.md](SKILL.md) | Agent entrypoint and workflow |
 | [Policy and evidence](references/policy-and-evidence.md) | Official sources and limits of evidence |
 | [Implementation](references/implementation.md) | Build boundaries, runtime access, configuration migration |
+| [Submission checks](references/submission-checks.md) | StoreKit testing, purchase retention, release CI, remote features |
 | [Project templates](references/project-templates.md) | Capability matrix, AGENTS.md, testing and review notes |
 | [Artifact scanning](references/artifact-scanning.md) | Policy schema and scanner limitations |
 | [Example policy](assets/audit-policy.example.json) | Adaptable, non-production policy template |

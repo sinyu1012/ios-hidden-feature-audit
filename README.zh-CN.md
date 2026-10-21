@@ -15,7 +15,8 @@
 - 明确 Debug、完整内测 Release、正式候选、TestFlight、App Store 和 Android 的能力差异。
 - 检查精简工具权限、直接路由、启动等待、临时错误、历史设置与升级兼容。
 - 按真实业务语义命名、迁移版本化配置，不以改名掩盖功能，不破坏旧客户端。
-- 提供项目专用扫描策略、测试交接、AGENTS.md 规则及如实披露的审核备注模板。
+- 补充 StoreKit 购买测试、真实购买代码的正向检查，以及上传前归档扫描阻断。
+- 提供远端功能清单、审核访问与上线计划、项目专用扫描策略和交接模板。
 
 **TestFlight 是安装渠道，不是编译配置。** 同一候选构建经 TestFlight 安装或提交商店，其已编译能力相同；通过收据限制访问不等于代码已从包中移除。
 
@@ -78,6 +79,7 @@ python3 scripts/scan_bundle.py /path/to/Example.xcarchive   --policy /path/to/pr
 | [SKILL.md](SKILL.md) | Agent 工作流入口 |
 | [政策与证据](references/policy-and-evidence.md) | 官方依据与证据边界 |
 | [实施要点](references/implementation.md) | 编译隔离、运行时访问、配置迁移 |
+| [提交检查](references/submission-checks.md) | StoreKit 测试、正式购买保留、发布 CI 与远端功能披露 |
 | [项目模板](references/project-templates.md) | 能力矩阵、AGENTS.md、测试与审核备注 |
 | [产物扫描](references/artifact-scanning.md) | 策略格式与扫描限制 |
 | [示例策略](assets/audit-policy.example.json) | 必须适配后才能使用的模板 |

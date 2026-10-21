@@ -47,6 +47,14 @@ Do not turn a previous project's forbidden words, phone numbers, keys, macros, o
 4. Hide unavailable tools rather than calling channels compiled out of the artifact.
 5. Report source validation, artifact scans, and device acceptance separately. If the user requests code-only verification, mark the latter two as outstanding.
 
+## Remote-feature review inventory
+
+| Capability / flag | Current and fallback state | Version / region / account scope | User-visible effect | Review steps / account permissions | Activation plan after review |
+|---|---|---|---|---|---|
+| Semantic feature name | On / off / variant / unavailable | Applicable audiences | Actual behavior or price/terms | Reproducible steps; no credentials here | Timing / conditions / changes requiring review assessment |
+
+Record relevant mutually exclusive states separately. Review access must expose the submitted capabilities without relying on a reviewer-detection branch. Keep account credentials in private submission fields; explain backend availability and any access prerequisites. Update this inventory when defaults, rollout plans, or behavior change.
+
 ## Review notes draft
 
 Describe the retained feature, purpose, exact entry steps, applicable environment, restrictions, current switch state, and any sample/simulated data. Provide the access needed to reproduce behavior without exposing production secrets. Check screenshots, What's New, privacy manifests, and privacy answers against actual behavior.

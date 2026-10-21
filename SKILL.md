@@ -25,6 +25,8 @@ Connect each capability to its purpose, compiled artifacts, access paths, side e
 4. Record what is compiled, accessible, and read from historical settings for Debug, internal Release, production candidate via TestFlight, the same candidate via App Store, and Android. Use [project templates](references/project-templates.md); mark unknowns explicitly.
 5. Prefer compile-time exclusion for capabilities with no production purpose. Retained diagnostics require a documented purpose, access policy, and truthful review notes. A limited developer page is a project decision, never a default exemption.
 
+For purchase testing, release CI gates, and remote-feature review access, use [submission checks](references/submission-checks.md). Prefer StoreKit testing over app-level entitlement overrides where it covers the scenario; verify production purchase retention as well as test-code exclusion.
+
 For changes, read the relevant sections of [implementation](references/implementation.md), including native boundaries, startup behavior, and versioned configuration migration.
 
 ## Verify and report
@@ -38,7 +40,9 @@ For changes, read the relevant sections of [implementation](references/implement
   python3 <skill-dir>/scripts/scan_bundle.py <App.app> --policy <project-policy.json> --profile app-store
   ```
   Inventory mode is not a policy pass. Adapt [the example policy](assets/audit-policy.example.json) to project-specific markers; broad keywords are only counted.
-- Verify both production exclusion and internal retention. Regress affected real login, purchases/restoration, networking, and data sync. Include TestFlight-to-store upgrades and missing/null/false/empty settings. Device-specific behavior requires device evidence.
+- A release CI gate must use an adapted project policy, block upload on scan failures or errors, and check the current artifact. Inventory-only success is insufficient.
+- Verify production business capability retention, production test-code exclusion, and internal test capability retention separately. For purchases, combine stable, path-scoped artifact evidence with functional purchase/restoration checks; a class-name match alone is insufficient.
+- Regress affected real login, purchases/restoration, networking, and data sync. Include TestFlight-to-store upgrades and missing/null/false/empty settings. Device-specific behavior requires device evidence.
 - Report source findings, executed checks, current artifact evidence, device checks, and policy verification separately. Findings need severity, location, trigger, consequence, and a narrow remedy.
 - Update project rules, capability/naming mappings, scanner policies, test instructions, and review notes. Explain non-obvious entrypoints proactively; a plan to explain them only if asked is not completed disclosure.
 
